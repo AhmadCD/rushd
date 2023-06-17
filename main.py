@@ -89,11 +89,18 @@ for i in prediction:
     readable_list.append("System Output: DO NOT Proceed with the investment")
 
 #print("Feasibility KPI'S")
+sd.divider()
+st.header("Feasibility KPI'S")
 #print("Market Value : ", market_value)
 #print("Economic Value : ", economic_value)
 #print("Break even ratio : ", break_even_ratio)
 #print("Cap Rate : ", cap_rate)
 #print("Net Income Multiplier : ", net_income_multiplier)
+
+col1, col2, col3 = st.columns(3)
+col1.metric("Market Value", market_value)
+col2.metric("Economic Value", economic_value)
+col3.metric("Break even ratio", break_even_ratio)
 
 #print("Operating KPI's")
 #print("Net Operating Income : ", NOI)
