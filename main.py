@@ -30,12 +30,6 @@ model = tf.keras.Sequential([
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(data_X, data_y, epochs=150)
 
-#تعريف floats 
-cap_rate = float
-operating_expense_ratio = float
-break_even_ratio = float
-COC = float
-
 total_rental_income = float(input("Enter total rental income: "))
 operating_expenses = float(input("Enter operating expenses: "))
 NOI = total_rental_income - operating_expenses
@@ -56,26 +50,26 @@ annual_cash_flow = total_rental_income + other_income - operating_expenses - deb
 COC = annual_cash_flow/total_cash_invested
 
 if cap_rate >= 0.06:
-  cap_rate = 1
+  cap_rate_1 = 1
 else:
-  cap_rate = 0
+  cap_rate_1 = 0
 
 if operating_expense_ratio <= 1:
-  operating_expense_ratio = 1
+  operating_expense_ratio_1 = 1
 else:
-  operating_expense_ratio = 0
+  operating_expense_ratio_1 = 0
 
 if break_even_ratio <= 1:
-  break_even_ratio = 1
+  break_even_ratio_1 = 1
 else:
-  break_even_ratio = 0
+  break_even_ratio_1 = 0
 
 if COC >= 0:
-  COC = 1
+  COC_1 = 1
 else:
-  COC = 0
+  COC_1 = 0
 
-input_data = np.array([[cap_rate, operating_expense_ratio, break_even_ratio, COC]])
+input_data = np.array([[cap_rate_1, operating_expense_ratio_1, break_even_ratio_1, COC_1]])
 threshold = 0.1
 
 prediction = model.predict(input_data)
@@ -89,9 +83,9 @@ for i in prediction:
   else:
     readable_list.append("System Output: DO NOT Proceed with the investment")
 
-print("feasibility KPI'S")
+print("Feasibility KPI'S")
 print("Market Value : ", market_value)
-print("Econmic Value : ", economic_value)
+print("Economic Value : ", economic_value)
 print("Break even ratio : ", break_even_ratio)
 print("Cap Rate : ", cap_rate)
 print("Net Income Multiplier : ", net_income_multiplier)
@@ -99,8 +93,8 @@ print("Net Income Multiplier : ", net_income_multiplier)
 print("Operating KPI's")
 print("Net Operating Income : ", NOI)
 print("Gross Operating Income : ", GOI)
-print("Opreating Expence ratio : ", operating_expense_ratio)
-print("Gross Rental Yeild : ", gross_rental_yeild)
+print("Operating Expense ratio : ", operating_expense_ratio)
+print("Gross Rental Yield : ", gross_rental_yeild)
 
 print("Cash Flow KPI's")
 print("Annual Cash Flow : ", annual_cash_flow)
