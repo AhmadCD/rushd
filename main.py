@@ -2,8 +2,6 @@ import tensorflow as tf
 import numpy as np
 import streamlit as st
 
-st.write("Here's our first attempt at using data to create a table:")
-
 # Sample Data
 data_X = np.array([
     [1, 1, 1, 1],
@@ -33,7 +31,8 @@ model = tf.keras.Sequential([
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(data_X, data_y, epochs=150)
 
-total_rental_income = float(input("Enter total rental income: "))
+
+total_rental_income = st.number_input('Enter total rental income:') #float(input("Enter total rental income: "))
 operating_expenses = float(input("Enter operating expenses: "))
 NOI = total_rental_income - operating_expenses
 current_market_value = float(input("Enter current market value: "))
