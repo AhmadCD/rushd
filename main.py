@@ -98,8 +98,8 @@ st.header("Feasibility KPI'S")
 #print("Net Income Multiplier: ", net_income_multiplier)
 
 col1, col2, col3 = st.columns(3)
-col1.metric("Market Value", market_value, economic_value)
-col2.metric("Economic Value", economic_value, market_value )
+col1.metric("Market Value", market_value)
+col2.metric("Economic Value", economic_value)
 col3.metric("Break even ratio", break_even_ratio)
 
 col4, col5 = st.columns(2)
