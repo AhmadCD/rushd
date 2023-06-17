@@ -84,9 +84,9 @@ readable_list = []
 
 for i in prediction:
   if i[0] >= 0.1:
-    readable_list.append("System Output: Proceed with the investment")
+    readable_list.append("Recommendation: Proceed with the investment")
   else:
-    readable_list.append("System Output: DO NOT Proceed with the investment")
+    readable_list.append("Recommendation: DO NOT Proceed with the investment")
 
 #print("Feasibility KPI'S")
 st.divider()
@@ -123,7 +123,7 @@ col9.metric("Gross Rental Yield", gross_rental_yeild)
 
 #print("Cash Flow KPI's")
 st.divider()
-st.header("Operating KPI's")
+st.header("Cash Flow KPI's")
 #print("Annual Cash Flow : ", annual_cash_flow)
 #print("Cash on Cash return : ", COC)
 col10, col11 = st.columns(2)
