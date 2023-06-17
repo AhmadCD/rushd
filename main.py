@@ -40,7 +40,7 @@ NOI = total_rental_income - operating_expenses or 1.00
 current_market_value = st.number_input('Enter current market value:', min_value=1.00) #float(input("Enter current market value: "))
 cap_rate = NOI/current_market_value or 1.00
 market_value = NOI/cap_rate or 1.00
-investors_cap_rate = st.number_input('Enter Expected rate of return', min_value=1.00) #float(input("Enter Expected rate of return: "))
+investors_cap_rate = st.number_input('Enter Expected rate of return', min_value=0.01) #float(input("Enter Expected rate of return: "))
 economic_value = NOI/investors_cap_rate or 1.00
 other_income = st.number_input('Enter any other income source if available') #float(input("Enter any other income source if available: "))
 GOI = total_rental_income + other_income or 1.00
