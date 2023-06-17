@@ -33,27 +33,26 @@ model = tf.keras.Sequential([
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(data_X, data_y, epochs=150)
 
-try:
-    total_rental_income = st.number_input('Enter total rental income') #float(input("Enter total rental income: "))
-    operating_expenses = st.number_input('Enter operating expenses') #float(input("Enter operating expenses: "))
-    NOI = total_rental_income - operating_expenses
-    current_market_value = st.number_input('Enter current market value:', min_value=1) #float(input("Enter current market value: "))
-    cap_rate = NOI/current_market_value
-    market_value = NOI/cap_rate
-    investors_cap_rate = st.number_input('Enter Expected rate of return') #float(input("Enter Expected rate of return: "))
-    economic_value = NOI/investors_cap_rate
-    other_income = st.number_input('Enter any other income source if available') #float(input("Enter any other income source if available: "))
-    GOI = total_rental_income + other_income
-    operating_expense_ratio = operating_expenses/GOI
-    net_income_multiplier = market_value/NOI
-    debt_service = st.number_input('Enter debt services') #float(input("Enter debt services: "))
-    break_even_ratio = (operating_expenses + debt_service)/GOI
-    gross_rental_yeild = total_rental_income/operating_expenses
-    total_cash_invested = st.number_input('Enter Total Cash Invested')#float(input("Enter Total Cash Invested: "))
-    annual_cash_flow = total_rental_income + other_income - operating_expenses - debt_service
-    COC = annual_cash_flow/total_cash_invested
-except:
-    print("An error")
+
+total_rental_income = st.number_input('Enter total rental income', min_value=1.00) #float(input("Enter total rental income: "))
+operating_expenses = st.number_input('Enter operating expenses', min_value=1.00) #float(input("Enter operating expenses: "))
+NOI = total_rental_income - operating_expenses
+current_market_value = st.number_input('Enter current market value:', min_value=1.00) #float(input("Enter current market value: "))
+cap_rate = NOI/current_market_value
+market_value = NOI/cap_rate
+investors_cap_rate = st.number_input('Enter Expected rate of return', min_value=1.00) #float(input("Enter Expected rate of return: "))
+economic_value = NOI/investors_cap_rate
+other_income = st.number_input('Enter any other income source if available', min_value=1.00) #float(input("Enter any other income source if available: "))
+GOI = total_rental_income + other_income
+operating_expense_ratio = operating_expenses/GOI
+net_income_multiplier = market_value/NOI
+debt_service = st.number_input('Enter debt services', min_value=1.00) #float(input("Enter debt services: "))
+break_even_ratio = (operating_expenses + debt_service)/GOI
+gross_rental_yeild = total_rental_income/operating_expenses
+total_cash_invested = st.number_input('Enter Total Cash Invested', min_value=1.00)#float(input("Enter Total Cash Invested: "))
+annual_cash_flow = total_rental_income + other_income - operating_expenses - debt_service
+COC = annual_cash_flow/total_cash_invested
+
 
 if cap_rate >= 0.06:
   cap_rate_1 = 1
