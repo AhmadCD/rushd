@@ -42,11 +42,11 @@ cap_rate = NOI/current_market_value or 1.00
 market_value = NOI/cap_rate or 1.00
 investors_cap_rate = st.number_input('Enter Expected rate of return', min_value=1.00) #float(input("Enter Expected rate of return: "))
 economic_value = NOI/investors_cap_rate or 1.00
-other_income = st.number_input('Enter any other income source if available', min_value=1.00) #float(input("Enter any other income source if available: "))
+other_income = st.number_input('Enter any other income source if available') #float(input("Enter any other income source if available: "))
 GOI = total_rental_income + other_income or 1.00
 operating_expense_ratio = operating_expenses/GOI or 1.00 
 net_income_multiplier = market_value/NOI or 1.00
-debt_service = st.number_input('Enter debt services', min_value=1.00) #float(input("Enter debt services: ")) or 1.00
+debt_service = st.number_input('Enter debt services') #float(input("Enter debt services: ")) or 1.00
 break_even_ratio = (operating_expenses + debt_service)/GOI or 1.00
 gross_rental_yeild = total_rental_income/operating_expenses or 1.00
 total_cash_invested = st.number_input('Enter Total Cash Invested', min_value=1.00)#float(input("Enter Total Cash Invested: "))
