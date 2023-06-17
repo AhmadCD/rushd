@@ -2,6 +2,8 @@ import tensorflow as tf
 import numpy as np
 import streamlit as st
 
+st.title("Rushd")
+st.subheader("Redefining Real Estate Investement")
 # Sample Data
 data_X = np.array([
     [1, 1, 1, 1],
@@ -32,22 +34,22 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy']
 model.fit(data_X, data_y, epochs=150)
 
 
-total_rental_income = st.number_input('Enter total rental income:') #float(input("Enter total rental income: "))
-operating_expenses = float(input("Enter operating expenses: "))
+total_rental_income = st.number_input('Enter total rental income') #float(input("Enter total rental income: "))
+operating_expenses = st.number_input('Enter operating expenses') #float(input("Enter operating expenses: "))
 NOI = total_rental_income - operating_expenses
-current_market_value = float(input("Enter current market value: "))
+current_market_value = st.number_input('Enter current market value:') #float(input("Enter current market value: "))
 cap_rate = NOI/current_market_value
 market_value = NOI/cap_rate
-investors_cap_rate = float(input("Enter Expected rate of return: "))
+investors_cap_rate = st.number_input('Enter Expected rate of return') #float(input("Enter Expected rate of return: "))
 economic_value = NOI/investors_cap_rate
-other_income = float(input("Enter any other income source if available: "))
+other_income = st.number_input('Enter any other income source if available') #float(input("Enter any other income source if available: "))
 GOI = total_rental_income + other_income
 operating_expense_ratio = operating_expenses/GOI
 net_income_multiplier = market_value/NOI
-debt_service = float(input("Enter debt services: "))
+debt_service = st.number_input('Enter debt services') #float(input("Enter debt services: "))
 break_even_ratio = (operating_expenses + debt_service)/GOI
 gross_rental_yeild = total_rental_income/operating_expenses
-total_cash_invested = float(input("Enter Total Cash Invested: "))
+total_cash_invested = st.number_input('Enter Total Cash Invested')#float(input("Enter Total Cash Invested: "))
 annual_cash_flow = total_rental_income + other_income - operating_expenses - debt_service
 COC = annual_cash_flow/total_cash_invested
 
@@ -85,21 +87,21 @@ for i in prediction:
   else:
     readable_list.append("System Output: DO NOT Proceed with the investment")
 
-print("Feasibility KPI'S")
-print("Market Value : ", market_value)
-print("Economic Value : ", economic_value)
-print("Break even ratio : ", break_even_ratio)
-print("Cap Rate : ", cap_rate)
-print("Net Income Multiplier : ", net_income_multiplier)
+#print("Feasibility KPI'S")
+#print("Market Value : ", market_value)
+#print("Economic Value : ", economic_value)
+#print("Break even ratio : ", break_even_ratio)
+#print("Cap Rate : ", cap_rate)
+#print("Net Income Multiplier : ", net_income_multiplier)
 
-print("Operating KPI's")
-print("Net Operating Income : ", NOI)
-print("Gross Operating Income : ", GOI)
-print("Operating Expense ratio : ", operating_expense_ratio)
-print("Gross Rental Yield : ", gross_rental_yeild)
+#print("Operating KPI's")
+#print("Net Operating Income : ", NOI)
+#print("Gross Operating Income : ", GOI)
+#print("Operating Expense ratio : ", operating_expense_ratio)
+#print("Gross Rental Yield : ", gross_rental_yeild)
 
-print("Cash Flow KPI's")
-print("Annual Cash Flow : ", annual_cash_flow)
-print("Cash on Cash return : ", COC)
+#print("Cash Flow KPI's")
+#print("Annual Cash Flow : ", annual_cash_flow)
+#print("Cash on Cash return : ", COC)
 
-print(readable_list[0])
+#print(readable_list[0])
