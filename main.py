@@ -52,8 +52,8 @@ try:
     total_cash_invested = st.number_input('Enter Total Cash Invested')#float(input("Enter Total Cash Invested: "))
     annual_cash_flow = total_rental_income + other_income - operating_expenses - debt_service
     COC = annual_cash_flow/total_cash_invested
-catch err:
-    print(err)
+except:
+    print("An error")
 
 if cap_rate >= 0.06:
   cap_rate_1 = 1
