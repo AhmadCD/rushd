@@ -33,7 +33,7 @@ model = tf.keras.Sequential([
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(data_X, data_y, epochs=150)
 
-
+try {
 total_rental_income = st.number_input('Enter total rental income') #float(input("Enter total rental income: "))
 operating_expenses = st.number_input('Enter operating expenses') #float(input("Enter operating expenses: "))
 NOI = total_rental_income - operating_expenses
@@ -52,6 +52,9 @@ gross_rental_yeild = total_rental_income/operating_expenses
 total_cash_invested = st.number_input('Enter Total Cash Invested')#float(input("Enter Total Cash Invested: "))
 annual_cash_flow = total_rental_income + other_income - operating_expenses - debt_service
 COC = annual_cash_flow/total_cash_invested
+}catch err {
+    print(err)
+}
 
 if cap_rate >= 0.06:
   cap_rate_1 = 1
