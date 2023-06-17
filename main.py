@@ -131,4 +131,4 @@ col10.metric("Annual Cash Flow", annual_cash_flow)
 col11.metric("Cash on Cash return", COC)
 
 #print(readable_list[0])
-st.dataframe(readable_list[0])
+st.header(readable_list[0])
