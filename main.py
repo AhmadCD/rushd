@@ -37,7 +37,7 @@ model.fit(data_X, data_y, epochs=150)
 total_rental_income = st.number_input('Enter total rental income') #float(input("Enter total rental income: "))
 operating_expenses = st.number_input('Enter operating expenses') #float(input("Enter operating expenses: "))
 NOI = total_rental_income - operating_expenses
-current_market_value = st.number_input('Enter current market value:') #float(input("Enter current market value: "))
+current_market_value = st.number_input('Enter current market value:', min_value=1) #float(input("Enter current market value: "))
 cap_rate = NOI/current_market_value
 market_value = NOI/cap_rate
 investors_cap_rate = st.number_input('Enter Expected rate of return') #float(input("Enter Expected rate of return: "))
