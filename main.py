@@ -122,7 +122,13 @@ col8.metric("Operating Expense ratio", operating_expense_ratio)
 col9.metric("Gross Rental Yield", gross_rental_yeild)
 
 #print("Cash Flow KPI's")
+st.divider()
+st.header("Operating KPI's")
 #print("Annual Cash Flow : ", annual_cash_flow)
 #print("Cash on Cash return : ", COC)
+col10, col11 = st.columns(2)
+col10.metric("Annual Cash Flow", annual_cash_flow)
+col11.metric("Cash on Cash return", COC)
 
 #print(readable_list[0])
+st.dataframe(readable_list[0])
