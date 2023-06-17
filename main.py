@@ -102,7 +102,7 @@ col1.metric("Market Value", market_value, economic_value)
 col2.metric("Economic Value", economic_value, market_value )
 col3.metric("Break even ratio", break_even_ratio)
 
-col14 col5 = st.columns(2)
+col14, col5 = st.columns(2)
 col4.metric("Cap Rate", cap_rate)
 col5.metric("Net Income Multiplier", net_income_multiplier)
 
