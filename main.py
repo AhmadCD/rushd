@@ -131,5 +131,6 @@ col10.metric("Annual Cash Flow", annual_cash_flow)
 col11.metric("Cash on Cash return", COC)
 
 #print(readable_list[0])
+st.divider()
 st.header("Recommendation")
 st.subheader(readable_list[0])
