@@ -89,7 +89,7 @@ for i in prediction:
     readable_list.append("System Output: DO NOT Proceed with the investment")
 
 #print("Feasibility KPI'S")
-sd.divider()
+st.divider()
 st.header("Feasibility KPI'S")
 #print("Market Value : ", market_value)
 #print("Economic Value : ", economic_value)
