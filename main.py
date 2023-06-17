@@ -2,6 +2,8 @@ import tensorflow as tf
 import numpy as np
 import streamlit as st
 
+st.write("Here's our first attempt at using data to create a table:")
+
 # Sample Data
 data_X = np.array([
     [1, 1, 1, 1],
